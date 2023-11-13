@@ -85,17 +85,17 @@
             function dodaj() {
                 var wyswietl = "";
 
-                var breakingValue = document.getElementById('breaking').value;
-                var strangerValue = document.getElementById('stranger').value;
+                var breaking = document.getElementById('breaking').value;
+                var stranger = document.getElementById('stranger').value;
 
-                var listaValue = document.getElementById('lista').value;
-                var lista2Value = document.getElementById('lista2').value;
+                var lista = document.getElementById('lista').value;
+                var lista2 = document.getElementById('lista2').value;
 
-                if (listaValue !== "") {
+                if (lista !== "") {
                     wyswietl += "<p>Tytuł: " + breakingValue + " <br>Kategoria: " + listaValue + "</p>";
                 }
 
-                if (lista2Value !== "") {
+                if (lista2 !== "") {
                     wyswietl += "<p>Tytuł: " + strangerValue + " <br>Kategoria: " + lista2Value + "</p>";
                 }
 
