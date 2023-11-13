@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moja lista filmów</title>
+</head>
+<style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        div {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        select, input[type="text"] {
+            margin: 5px 0;
+            padding: 5px;
+            width: 100%;
+        }
+
+        select, input[type="text"], input[type="submit"] {
+            font-size: 16px;
+        }
+
+        .dodaj {
+            text-align: center;
+        }
+
+        #wynik {
+            margin: 20px 0;
+        }
+</style>
+<body>
+    <h1>Lista filmów</h1>
+
+    <div>
+        <input type="text" id="breaking" value="Breaking Bad">
+        <input type="text" id="stranger" value="Stranger Things">
+
+        <h3 id="Breaking">Breaking Bad</h3>
+        <p>Opis: Serial o nauczycielu chemii, który zaczyna produkować metamfetaminę.</p>
+        <p>Liczba sezonów: 5</p>
+        <p>Gdzie obejrzeć: Netflix, Amazon Prime</p>
+        <select id="lista">
+          <option value="obejrzane">Obejrzane</option>
+          <option value="ogladane">W trakcie oglądania</option>
+          <option value="planowane">Planowane</option>
+        </select>
+
+        <h3 id="Stranger">Stranger Things</h3>
+        <p>Opis: Grupa dzieci w miasteczku, gdzie zaczynają dziać się dziwne rzeczy.</p>
+        <p>Liczba sezonów: 4</p>
+        <p>Gdzie obejrzeć: Netflix</p>
+        <select id="lista2">
+            <option value="obejrzane">Obejrzane</option>
+            <option value="ogladane">W trakcie oglądania</option>
+            <option value="planowane">Planowane</option>
+        </select>
+
+        <div class="dodaj">
+            <input type="submit" value="Dodaj" onclick="dodaj()">
+        </div>
+
+        <div id="wynik"></div>
+
+        <script>
+            function dodaj() {
+                var wyswietl = "";
+
+                var breakingValue = document.getElementById('breaking').value;
+                var strangerValue = document.getElementById('stranger').value;
+
+                var listaValue = document.getElementById('lista').value;
+                var lista2Value = document.getElementById('lista2').value;
+
+                if (listaValue !== "") {
+                    wyswietl += "<p>Tytuł: " + breakingValue + " <br>Kategoria: " + listaValue + "</p>";
+                }
+
+                if (lista2Value !== "") {
+                    wyswietl += "<p>Tytuł: " + strangerValue + " <br>Kategoria: " + lista2Value + "</p>";
+                }
+
+                document.getElementById('wynik').innerHTML = wyswietl;
+            }
+        </script>
+    </div>
+</body>
+</html>
