@@ -27,13 +27,13 @@
         die("Błąd połączenia z bazą danych: " . mysqli_connect_error());
     }
 
-    $komunikat = 'Zaloguj się'; // Dodaj zmienną dla komunikatu
+    $komunikat = 'Zaloguj się'; 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $login = $_POST['login'];
         $haslo = $_POST['haslo'];
 
-        // Zapytanie SQL (uwaga: narażone na SQL Injection)
+        
         $sql = "SELECT id, login, haslo FROM uzytkownicy WHERE login = '$login'";
 
         $result = $conn->query($sql);
@@ -41,7 +41,7 @@
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
 
-            // Jeśli użytkownik istnieje, sprawdź hasło (uwaga: niebezpieczne!)
+            
             if ($haslo === $row['haslo']) {
                 $_SESSION['id'] = $row['id'];
                 header("Location: LiczbaFilmow.php");
