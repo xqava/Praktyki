@@ -21,7 +21,6 @@
     <p>Nie masz konta? Możesz je założyć tutaj: <a href="rejestracja.php">Zarejestruj</a></p>
 
 <?php
-    session_start();
     $conn = mysqli_connect("127.0.0.1","root","","filmy");
     if (!$conn) {
         die("Błąd połączenia z bazą danych: " . mysqli_connect_error());
@@ -45,7 +44,6 @@
             if ($haslo === $row['haslo']) {
                 $_SESSION['id'] = $row['id'];
                 header("Location: LiczbaFilmow.php");
-                exit();
             } else {
                 $komunikat = "Nieprawidłowe hasło.";
             }
