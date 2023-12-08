@@ -33,7 +33,6 @@
         if ($conn->query($query) === TRUE) {
             echo "Rejestracja udana!";
             header("Location: login.php");
-            exit();
         } else {
             echo "Błąd podczas rejestracji: " . $conn->error;
         }
